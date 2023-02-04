@@ -22,7 +22,7 @@
       copy:
         content: "{{vprokey_out.key.private_key}}"
         dest: "./loginkey_vpro.pem"
-        mode: 0600
+        mode: 0777
       when: vprokey_out.changed
 
     - name: Create Securiry Group for Load Balancer
@@ -208,7 +208,7 @@
       copy:
         src: loginkey_vpro.pem
         dest: provision-stack/loginkey_vpro.pem
-        mode: '0400'
+        mode: '0466'
 
     - name: Insert/Update Inventory file provision-stack/inventory-vpro
       blockinfile:
