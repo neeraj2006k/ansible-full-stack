@@ -1,6 +1,8 @@
 - hosts: localhost
   connection: local
   gather_facts: False
+  become: yes
+  become_user: root
   tasks:
     - name: Import VPC Variables
       include_vars: vars/vpc_setup
